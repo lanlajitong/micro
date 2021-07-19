@@ -1,0 +1,26 @@
+package com.intuit.craft.feed.exchange.service;
+
+import java.math.BigDecimal;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class CurrencyExchangeController {
+	@Autowired
+    private JdbcTemplate jdbcTemplate;
+	
+	@GetMapping("/currency-exchange/from/{from}/to/{to}")
+	public ExchangeValue retrieveExchangeValue(@PathVariable String from, @PathVariable String to) {
+		
+		String query = "SELECT * FROM exchange_value WHERE currency_from = ? and currency_to = ?";
+		ExchangeValue ev = jdbcTemplate.queryForObject(
+				query, new ExchangeValueMapper(), from, to);
+		
+		 
+		return ev;
+	}
+}

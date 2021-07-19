@@ -1,0 +1,8 @@
+package com.intuit.craft.demo.user.exception;
+
+public class FieldDetailWithFixer {
+
+	private String fieldName;
+	private String message;
+	private String fixer; //TODO
+}

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="CraftDemoApplicationControllerTests" project="craft-demo" tests="1" started="1" failures="0" errors="0" ignored="0">
+  <testsuite name="com.intuit.craft.demo.controller.CraftDemoApplicationControllerTests" time="0.368" displayname="CraftDemoApplicationControllerTests" uniqueid="[engine:junit-jupiter]/[class:com.intuit.craft.demo.controller.CraftDemoApplicationControllerTests]">
+    <testcase name="deleteTweetAuthor" classname="com.intuit.craft.demo.controller.CraftDemoApplicationControllerTests" time="0.368" displayname="deleteTweetAuthor()" uniqueid="[engine:junit-jupiter]/[class:com.intuit.craft.demo.controller.CraftDemoApplicationControllerTests]/[method:deleteTweetAuthor()]"/>
+  </testsuite>
+</testrun>

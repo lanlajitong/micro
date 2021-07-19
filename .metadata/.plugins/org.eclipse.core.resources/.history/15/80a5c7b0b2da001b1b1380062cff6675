@@ -1,0 +1,9 @@
+package com.intuit.craft.feed.exchange.service;
+
+import org.springframework.jdbc.core.RowMapper;
+
+public class ExchangeValueMapper implements RowMapper<ExchangeValue> {
+
+
+
+}

@@ -1,0 +1,5 @@
+package com.intuit.craft.demo.user.dto.mapper;
+
+public class EntityMapper {
+
+}

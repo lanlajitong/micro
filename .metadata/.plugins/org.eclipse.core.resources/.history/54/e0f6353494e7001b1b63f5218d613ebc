@@ -1,0 +1,21 @@
+package com.intuit.craft.demo;
+
+import java.util.Arrays;
+
+public class CumulativeFrequeny  {
+
+	public static void main(String[] args) {
+		int[] a = new int[] {14,15,15,14,13,19,21,10};
+		CumulativeFrequeny c = new CumulativeFrequeny();
+		c.calc(a);
+	}
+	
+	public int[] calc(int[] data) {
+		Arrays.sort(data);
+		int len = data.length;
+		double log = Math.pow(len, 1/2);
+		
+		return new int[0];
+				
+	}
+}

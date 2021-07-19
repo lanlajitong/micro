@@ -1,0 +1,41 @@
+package com.intuit.craft.demo.user;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Component;
+
+@Component
+public class UserDAOService implements UserDAO {
+	
+	@Autowired
+	private static JdbcTemplate jdbcTemplate;
+	
+
+	@Override
+	public List<Enduser> findUsersIDLessThan(int upper, int pageNo, int pageSize) {
+		String query = "SELECT * FROM Enduser WHERE id < :id ORDER BY id asc LIMIT :limit OFFSET :offset";
+		List<Enduser> users = jdbcTemplate.query(
+				query, new EnduserMapper(), upper, pageNo, pageSize);
+		return users;
+	}
+
+	@Override
+	public boolean createUser(Enduser user) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean updateUser(Enduser user) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean deleteUser(int id) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+}

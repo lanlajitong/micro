@@ -1,0 +1,26 @@
+package com.intuit.craft.demo.feed.service.mapper;
+
+import org.mapstruct.*;
+import org.springframework.web.bind.annotation.Mapping;
+
+import com.intuit.craft.demo.feed.entity.TweetAuthor;
+import com.intuit.craft.demo.feed.service.dto.TweetAuthorDTO;
+
+/**
+ * Mapper for the entity TweetAuthor and its DTO TweetAuthorDTO.
+ */
+@Mapper(componentModel = "spring", uses = {})
+public interface TweetAuthorMapper extends EntityMapper <TweetAuthorDTO, TweetAuthor> {
+    
+    @Mapping(target = "tweets", ignore = true)
+    TweetAuthor toEntity(TweetAuthorDTO tweetAuthorDTO); 
+    
+    default TweetAuthor fromId(Long id) {
+        if (id == null) {
+            return null;
+        }
+        TweetAuthor tweetAuthor = new TweetAuthor();
+        tweetAuthor.setId(id);
+        return tweetAuthor;
+    }
+}

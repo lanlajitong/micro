@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="CraftDemoApplicatonServiceTests" project="craft-demo" tests="1" started="1" failures="0" errors="0" ignored="0">
+  <testsuite name="com.intuit.craft.demo.service.CraftDemoApplicatonServiceTests" time="0.498" displayname="CraftDemoApplicatonServiceTests" uniqueid="[engine:junit-jupiter]/[class:com.intuit.craft.demo.service.CraftDemoApplicatonServiceTests]">
+    <testcase name="testSubscriptionMessage" classname="com.intuit.craft.demo.service.CraftDemoApplicatonServiceTests" time="0.498" displayname="Subscription message service test" uniqueid="[engine:junit-jupiter]/[class:com.intuit.craft.demo.service.CraftDemoApplicatonServiceTests]/[method:testSubscriptionMessage()]"/>
+  </testsuite>
+</testrun>

@@ -1,0 +1,28 @@
+package com.intuit.craft.demo.service;
+
+import java.util.List;
+
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import com.intuit.craft.demo.user.domain.UserService;
+import com.intuit.craft.demo.user.dto.EnduserDTO;
+
+@SpringBootTest
+public class CraftDemoApplicatonServiceTests {
+
+	@Autowired
+	private UserService userService;
+	
+	
+	@Test
+	@DisplayName("Subscription message service test ")
+	void testSubscriptionMessage() {
+		List<EnduserDTO> retrieveUsersIDLessThanWithPagination = userService.retrieveUsersIDLessThanWithPagination(10, 0, 5);
+		
+		assertEquals(5, retrieveUsersIDLessThanWithPagination.size());
+	}
+
+}

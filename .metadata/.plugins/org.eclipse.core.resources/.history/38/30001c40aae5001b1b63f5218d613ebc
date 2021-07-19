@@ -1,0 +1,48 @@
+package com.intuit.craft.demo.user.domain;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.transaction.Transactional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.intuit.craft.demo.user.dao.impl.UserDAOService;
+import com.intuit.craft.demo.user.dto.EnduserDTO;
+import com.intuit.craft.demo.user.dto.mapper.EnduserMapperUtil;
+import com.intuit.craft.demo.user.entity.Enduser;
+
+@Service
+public class UserService {
+
+	@Autowired
+	private UserDAOService userDAOService;
+
+	public List<EnduserDTO> retrieveUsersIDLessThanWithPagination(long upper, int pageNo, int pageSize)
+    { 
+		List<EnduserDTO> findUsersIDLessThan = userDAOService.findUsersIDLessThan(upper, pageNo, pageSize);         
+        if(findUsersIDLessThan != null) {
+            return findUsersIDLessThan;
+        } else {
+            return new ArrayList<EnduserDTO>();
+        }
+	}
+	
+	@Transactional
+	public boolean createUser(final EnduserDTO user) {
+		return userDAOService.createUser(EnduserMapperUtil.toEntity(user));
+	}
+	
+	@Transactional
+	public boolean updateUser(final EnduserDTO user) {
+		return userDAOService.updateUser(EnduserMapperUtil.toEntity(user));
+	}
+	
+	@Transactional
+	public boolean deleteUser(final long id) {
+		return userDAOService.deleteUser(id);
+	}
+	
+	
+}

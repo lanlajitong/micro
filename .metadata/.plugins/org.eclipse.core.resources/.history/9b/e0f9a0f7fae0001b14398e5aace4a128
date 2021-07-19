@@ -1,0 +1,5 @@
+package com.intuit.craft.demo.user.exception;
+
+public class CommonException {
+
+}

@@ -1,0 +1,5 @@
+package com.intuit.craft.feed.exchange.service;
+
+public class ExchangeValue {
+
+}

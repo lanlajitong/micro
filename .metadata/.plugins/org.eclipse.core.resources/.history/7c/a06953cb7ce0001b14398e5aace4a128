@@ -1,0 +1,12 @@
+spring.application.name=craft-demo
+server.port=8000
+
+# spring.datasource.url=jdbc:mysql://host.docker.internal:3306/conversion
+spring.datasource.url=jdbc:mysql://localhost:3306/userfeed
+spring.datasource.username=craft
+spring.datasource.password=craft
+
+logging.level.org.springframework = info
+spring.jpa.show-sql=true
+spring.jpa.defer-datasource-initialization=true
+spring.jpa.hibernate.ddl-auto=none

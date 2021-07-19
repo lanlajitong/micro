@@ -1,0 +1,11 @@
+package com.intuit.craft.demo.user.dao;
+
+import java.util.List;
+
+public interface UserDAO {
+
+	public List<EnduserDTO> findUsersIDLessThan(long upper, int pageNo, int pageSize);
+	public boolean createUser(Enduser user);
+	public boolean updateUser(Enduser user);
+	public boolean deleteUser(long id);
+}

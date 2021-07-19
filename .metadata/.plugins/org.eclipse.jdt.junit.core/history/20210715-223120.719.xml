@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TweetAuthorResourceIntTest" project="craft-demo" tests="14" started="1" failures="0" errors="2" ignored="0">
+  <testsuite name="com.intuit.craft.demo.feed.TweetAuthorResourceIntTest" incomplete="true" displayname="TweetAuthorResourceIntTest" uniqueid="[engine:junit-jupiter]/[class:com.intuit.craft.demo.feed.TweetAuthorResourceIntTest]">
+    <error>org.junit.platform.commons.JUnitException: @BeforeAll method 'public void com.intuit.craft.demo.feed.TweetAuthorResourceIntTest.setup()' must be static unless the test class is annotated with @TestInstance(Lifecycle.PER_CLASS).
+	at org.junit.jupiter.engine.descriptor.LifecycleMethodUtils.assertStatic(LifecycleMethodUtils.java:57)
+	at org.junit.jupiter.engine.descriptor.LifecycleMethodUtils.lambda$findMethodsAndAssertStatic$0(LifecycleMethodUtils.java:81)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1540)
+	at java.base/java.util.Collections$UnmodifiableCollection.forEach(Collections.java:1085)
+	at org.junit.jupiter.engine.descriptor.LifecycleMethodUtils.findMethodsAndAssertStatic(LifecycleMethodUtils.java:81)
+	at org.junit.jupiter.engine.descriptor.LifecycleMethodUtils.findBeforeAllMethods(LifecycleMethodUtils.java:40)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.prepare(ClassBasedTestDescriptor.java:162)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.prepare(ClassBasedTestDescriptor.java:78)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$prepare$1(NodeTestTask.java:111)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.prepare(NodeTestTask.java:111)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:79)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1540)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:229)
+	at org.junit.platform.launcher.core.DefaultLauncher.lambda$execute$6(DefaultLauncher.java:197)
+	at org.junit.platform.launcher.core.DefaultLauncher.withInterceptedStreams(DefaultLauncher.java:211)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:191)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:137)
+	at org.eclipse.jdt.internal.junit5.runner.JUnit5TestReference.run(JUnit5TestReference.java:89)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:41)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:541)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:763)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:463)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:209)
+
+</error>
+    <testcase name="equalsVerifier" classname="com.intuit.craft.demo.feed.TweetAuthorResourceIntTest" incomplete="true" displayname="equalsVerifier()" uniqueid="[engine:junit-jupiter]/[class:com.intuit.craft.demo.feed.TweetAuthorResourceIntTest]/[method:equalsVerifier()]"/>
+    <testcase name="checkCreatedAtIsRequired" classname="com.intuit.craft.demo.feed.TweetAuthorResourceIntTest" incomplete="true" displayname="checkCreatedAtIsRequired()" uniqueid="[engine:junit-jupiter]/[class:com.intuit.craft.demo.feed.TweetAuthorResourceIntTest]/[method:checkCreatedAtIsRequired()]"/>
+    <testcase name="updateNonExistingTweetAuthor" classname="com.intuit.craft.demo.feed.TweetAuthorResourceIntTest" incomplete="true" displayname="updateNonExistingTweetAuthor()" uniqueid="[engine:junit-jupiter]/[class:com.intuit.craft.demo.feed.TweetAuthorResourceIntTest]/[method:updateNonExistingTweetAuthor()]"/>
+    <testcase name="updateTweetAuthor" classname="com.intuit.craft.demo.feed.TweetAuthorResourceIntTest" incomplete="true" displayname="updateTweetAuthor()" uniqueid="[engine:junit-jupiter]/[class:com.intuit.craft.demo.feed.TweetAuthorResourceIntTest]/[method:updateTweetAuthor()]"/>
+    <testcase name="createTweetAuthorWithExistingId" classname="com.intuit.craft.demo.feed.TweetAuthorResourceIntTest" incomplete="true" displayname="createTweetAuthorWithExistingId()" uniqueid="[engine:junit-jupiter]/[class:com.intuit.craft.demo.feed.TweetAuthorResourceIntTest]/[method:createTweetAuthorWithExistingId()]"/>
+    <testcase name="getAllTweetAuthors" classname="com.intuit.craft.demo.feed.TweetAuthorResourceIntTest" incomplete="true" displayname="getAllTweetAuthors()" uniqueid="[engine:junit-jupiter]/[class:com.intuit.craft.demo.feed.TweetAuthorResourceIntTest]/[method:getAllTweetAuthors()]"/>
+    <testcase name="getTweetAuthor" classname="com.intuit.craft.demo.feed.TweetAuthorResourceIntTest" incomplete="true" displayname="getTweetAuthor()" uniqueid="[engine:junit-jupiter]/[class:com.intuit.craft.demo.feed.TweetAuthorResourceIntTest]/[method:getTweetAuthor()]"/>
+    <testcase name="deleteTweetAuthor" classname="com.intuit.craft.demo.feed.TweetAuthorResourceIntTest" incomplete="true" displayname="deleteTweetAuthor()" uniqueid="[engine:junit-jupiter]/[class:com.intuit.craft.demo.feed.TweetAuthorResourceIntTest]/[method:deleteTweetAuthor()]"/>
+    <testcase name="dtoEqualsVerifier" classname="com.intuit.craft.demo.feed.TweetAuthorResourceIntTest" incomplete="true" displayname="dtoEqualsVerifier()" uniqueid="[engine:junit-jupiter]/[class:com.intuit.craft.demo.feed.TweetAuthorResourceIntTest]/[method:dtoEqualsVerifier()]"/>
+    <testcase name="createTweetAuthor" classname="com.intuit.craft.demo.feed.TweetAuthorResourceIntTest" incomplete="true" displayname="createTweetAuthor()" uniqueid="[engine:junit-jupiter]/[class:com.intuit.craft.demo.feed.TweetAuthorResourceIntTest]/[method:createTweetAuthor()]"/>
+    <testcase name="checkScreennameIsRequired" classname="com.intuit.craft.demo.feed.TweetAuthorResourceIntTest" incomplete="true" displayname="checkScreennameIsRequired()" uniqueid="[engine:junit-jupiter]/[class:com.intuit.craft.demo.feed.TweetAuthorResourceIntTest]/[method:checkScreennameIsRequired()]"/>
+    <testcase name="checkNameIsRequired" classname="com.intuit.craft.demo.feed.TweetAuthorResourceIntTest" incomplete="true" displayname="checkNameIsRequired()" uniqueid="[engine:junit-jupiter]/[class:com.intuit.craft.demo.feed.TweetAuthorResourceIntTest]/[method:checkNameIsRequired()]"/>
+    <testcase name="getNonExistingTweetAuthor" classname="com.intuit.craft.demo.feed.TweetAuthorResourceIntTest" incomplete="true" displayname="getNonExistingTweetAuthor()" uniqueid="[engine:junit-jupiter]/[class:com.intuit.craft.demo.feed.TweetAuthorResourceIntTest]/[method:getNonExistingTweetAuthor()]"/>
+  </testsuite>
+  <testsuite name="com.intuit.craft.demo.feed.TweetAuthorResourceIntTest" time="0.0" displayname="TweetAuthorResourceIntTest" uniqueid="[engine:junit-vintage]/[runner:com.intuit.craft.demo.feed.TweetAuthorResourceIntTest]">
+    <testcase name="com.intuit.craft.demo.feed.TweetAuthorResourceIntTest" classname="com.intuit.craft.demo.feed.TweetAuthorResourceIntTest" time="0.0" displayname="initializationError" uniqueid="[engine:junit-vintage]/[runner:com.intuit.craft.demo.feed.TweetAuthorResourceIntTest]/[test:initializationError(com.intuit.craft.demo.feed.TweetAuthorResourceIntTest)]">
+      <error>org.junit.runners.model.InvalidTestClassError: Invalid test class 'com.intuit.craft.demo.feed.TweetAuthorResourceIntTest':
+  1. No runnable methods
+	at org.junit.runners.ParentRunner.validate(ParentRunner.java:525)
+	at org.junit.runners.ParentRunner.&lt;init&gt;(ParentRunner.java:92)
+	at org.junit.runners.BlockJUnit4ClassRunner.&lt;init&gt;(BlockJUnit4ClassRunner.java:74)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.&lt;init&gt;(SpringJUnit4ClassRunner.java:137)
+	at org.springframework.test.context.junit4.SpringRunner.&lt;init&gt;(SpringRunner.java:49)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.junit.internal.builders.AnnotatedBuilder.buildRunner(AnnotatedBuilder.java:104)
+	at org.junit.vintage.engine.discovery.DefensiveAllDefaultPossibilitiesBuilder$DefensiveAnnotatedBuilder.buildRunner(DefensiveAllDefaultPossibilitiesBuilder.java:114)
+	at org.junit.internal.builders.AnnotatedBuilder.runnerForClass(AnnotatedBuilder.java:86)
+	at org.junit.runners.model.RunnerBuilder.safeRunnerForClass(RunnerBuilder.java:70)
+	at org.junit.internal.builders.AllDefaultPossibilitiesBuilder.runnerForClass(AllDefaultPossibilitiesBuilder.java:37)
+	at org.junit.vintage.engine.discovery.DefensiveAllDefaultPossibilitiesBuilder.runnerForClass(DefensiveAllDefaultPossibilitiesBuilder.java:57)
+	at org.junit.runners.model.RunnerBuilder.safeRunnerForClass(RunnerBuilder.java:70)
+	at org.junit.vintage.engine.discovery.ClassSelectorResolver.resolveTestClass(ClassSelectorResolver.java:66)
+	at org.junit.vintage.engine.discovery.ClassSelectorResolver.resolve(ClassSelectorResolver.java:47)
+	at org.junit.platform.engine.support.discovery.EngineDiscoveryRequestResolution.lambda$resolve$2(EngineDiscoveryRequestResolution.java:134)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.tryAdvance(ArrayList.java:1631)
+	at java.base/java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:127)
+	at java.base/java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:502)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:488)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:150)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:543)
+	at org.junit.platform.engine.support.discovery.EngineDiscoveryRequestResolution.resolve(EngineDiscoveryRequestResolution.java:185)
+	at org.junit.platform.engine.support.discovery.EngineDiscoveryRequestResolution.resolve(EngineDiscoveryRequestResolution.java:125)
+	at org.junit.platform.engine.support.discovery.EngineDiscoveryRequestResolution.resolveCompletely(EngineDiscoveryRequestResolution.java:91)
+	at org.junit.platform.engine.support.discovery.EngineDiscoveryRequestResolution.run(EngineDiscoveryRequestResolution.java:82)
+	at org.junit.platform.engine.support.discovery.EngineDiscoveryRequestResolver.resolve(EngineDiscoveryRequestResolver.java:113)
+	at org.junit.vintage.engine.discovery.VintageDiscoverer.discover(VintageDiscoverer.java:44)
+	at org.junit.vintage.engine.VintageTestEngine.discover(VintageTestEngine.java:63)
+	at org.junit.platform.launcher.core.DefaultLauncher.discoverEngineRoot(DefaultLauncher.java:177)
+	at org.junit.platform.launcher.core.DefaultLauncher.discoverRoot(DefaultLauncher.java:164)
+	at org.junit.platform.launcher.core.DefaultLauncher.discover(DefaultLauncher.java:120)
+	at org.eclipse.jdt.internal.junit5.runner.JUnit5TestReference.&lt;init&gt;(JUnit5TestReference.java:45)
+	at org.eclipse.jdt.internal.junit5.runner.JUnit5TestLoader.createUnfilteredTest(JUnit5TestLoader.java:76)
+	at org.eclipse.jdt.internal.junit5.runner.JUnit5TestLoader.createTest(JUnit5TestLoader.java:66)
+	at org.eclipse.jdt.internal.junit5.runner.JUnit5TestLoader.loadTests(JUnit5TestLoader.java:53)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:525)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:763)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:463)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:209)
+
+</error>
+    </testcase>
+  </testsuite>
+</testrun>

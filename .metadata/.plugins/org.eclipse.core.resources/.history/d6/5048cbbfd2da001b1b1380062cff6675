@@ -1,0 +1,13 @@
+package com.intuit.craft.feed.exchange.service;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class CraftFeedExchangeServiceApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(CraftFeedExchangeServiceApplication.class, args);
+	}
+
+}

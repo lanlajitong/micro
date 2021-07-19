@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="CraftDemoApplicationControllerTests" project="craft-demo" tests="4" started="4" failures="0" errors="0" ignored="0">
+  <testsuite name="com.intuit.craft.demo.controller.CraftDemoApplicationControllerTests" time="0.849" displayname="CraftDemoApplicationControllerTests" uniqueid="[engine:junit-jupiter]/[class:com.intuit.craft.demo.controller.CraftDemoApplicationControllerTests]">
+    <testcase name="testPostEndusers" classname="com.intuit.craft.demo.controller.CraftDemoApplicationControllerTests" time="0.396" displayname="/enduserspagination rest api test" uniqueid="[engine:junit-jupiter]/[class:com.intuit.craft.demo.controller.CraftDemoApplicationControllerTests]/[method:testPostEndusers()]"/>
+    <testcase name="testGetEnduserspagination" classname="com.intuit.craft.demo.controller.CraftDemoApplicationControllerTests" time="0.288" displayname="testGetEnduserspagination" uniqueid="[engine:junit-jupiter]/[class:com.intuit.craft.demo.controller.CraftDemoApplicationControllerTests]/[method:testGetEnduserspagination()]"/>
+    <testcase name="deleteExistingEnduser" classname="com.intuit.craft.demo.controller.CraftDemoApplicationControllerTests" time="0.122" displayname="deleteExistingEnduser()" uniqueid="[engine:junit-jupiter]/[class:com.intuit.craft.demo.controller.CraftDemoApplicationControllerTests]/[method:deleteExistingEnduser()]"/>
+    <testcase name="deleteNotExistingTweetAuthor" classname="com.intuit.craft.demo.controller.CraftDemoApplicationControllerTests" time="0.043" displayname="deleteNotExistingTweetAuthor()" uniqueid="[engine:junit-jupiter]/[class:com.intuit.craft.demo.controller.CraftDemoApplicationControllerTests]/[method:deleteNotExistingTweetAuthor()]"/>
+  </testsuite>
+</testrun>

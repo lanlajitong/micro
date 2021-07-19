@@ -1,0 +1,42 @@
+package com.intuit.craft.demo.user.domain;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.intuit.craft.demo.user.dao.impl.UserDAOService;
+import com.intuit.craft.demo.user.dto.EnduserDTO;
+import com.intuit.craft.demo.user.entity.Enduser;
+
+@Service
+public class UserService {
+
+	@Autowired
+	UserDAOService userDAOService;
+	
+	public List<EnduserDTO> retrieveUsersIDLessThanWithPagination(long upper, int pageNo, int pageSize)
+    { 
+		List<EnduserDTO> findUsersIDLessThan = userDAOService.findUsersIDLessThan(upper, pageNo, pageSize);         
+        if(findUsersIDLessThan != null) {
+            return findUsersIDLessThan;
+        } else {
+            return new ArrayList<EnduserDTO>();
+        }
+	}
+	
+	public boolean createUser(final EnduserDTO user) {
+		return userDAOService.createUser(user);
+	}
+	
+	public boolean updateUser(final Enduser user) {
+		return userDAOService.updateUser(user);
+	}
+	
+	public boolean deleteUser(final long id) {
+		return userDAOService.deleteUser(id);
+	}
+	
+	
+}

@@ -1,0 +1,114 @@
+package com.intuit.craft.demo.controller;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import java.net.URI;
+import java.util.Date;
+import java.util.List;
+
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+import org.mockito.MockitoAnnotations;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
+import org.springframework.boot.test.web.client.TestRestTemplate;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
+import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+import org.springframework.web.util.UriComponentsBuilder;
+
+import com.intuit.craft.demo.feed.controller.TweetAuthorResource;
+import com.intuit.craft.demo.user.controller.UserController;
+import com.intuit.craft.demo.user.dto.EnduserDTO;
+import com.intuit.craft.demo.user.exception.CraftResponseEntityExceptionHandler;
+
+@SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
+public class CraftDemoApplicationControllerTests {
+	@Autowired
+	private TestRestTemplate restTemplate;
+	
+	@Autowired
+	private CraftResponseEntityExceptionHandler exceptionHandler;
+	
+    @Autowired
+    private MappingJackson2HttpMessageConverter jacksonMessageConverter;
+
+	@Autowired
+    private NamedParameterJdbcTemplate jdbcTemplate;
+	
+	@Autowired
+	private UserController userController;
+	
+	private MockMvc restMockMvc;
+	
+	@AfterEach
+	public void cleanupDB() {
+		String SQL_DELETE_ALL = "delete from Enduser ";
+		 jdbcTemplate.update(SQL_DELETE_ALL, new MapSqlParameterSource());
+	}
+	
+	@BeforeAll 
+    public void setup() {
+        MockitoAnnotations.openMocks(this);
+        this.restMockMvc = MockMvcBuilders.standaloneSetup(userController)
+            //.setCustomArgumentResolvers(pageableArgumentResolver)
+            .setControllerAdvice(exceptionHandler)
+            .setMessageConverters(jacksonMessageConverter).build();
+    }  
+	
+
+
+	 @Test
+	 @DisplayName("/enduserspagination rest api test ")
+	 void testGetEnduserspagination() {
+		 
+		 URI targetUrl= UriComponentsBuilder.fromUriString("/enduserspagination")                             
+				    .queryParam("pageNo", 0)   
+				    .queryParam("pageSize", 5)
+				    .queryParam("upper", 10)
+				    .build()                                                
+				    .encode()                                               
+				    .toUri();
+		 
+	  List forObject = this.restTemplate.getForObject(targetUrl, List.class);
+	  assertEquals(5, forObject.size());
+	 }
+	 
+	 @Test
+	 @DisplayName("/enduserspagination rest api test ")
+	 void testPostEndusers() {
+		 
+		 URI targetUrl= UriComponentsBuilder.fromUriString("/endusers")                             
+				    .build()                                                
+				    .encode()                                               
+				    .toUri();
+		 
+	  EnduserDTO  userDto = new EnduserDTO();
+	  userDto.setFirstName("Zacl");
+	  userDto.setLastName("Chen");
+	  userDto.setBirthday(new Date());
+	  ResponseEntity resObject = this.restTemplate.postForEntity(targetUrl, userDto , ResponseEntity.class) ;
+	  assertEquals(HttpStatus.CREATED, resObject.getStatusCode());
+	 }
+	 
+	 @Test
+	 void deleteEnduser() {
+		 URI targetUrl= UriComponentsBuilder.fromUriString("/endusers/{id}")
+				 	.buildAndExpand(15)
+				    //.build()                                                
+				    .encode()                                               
+				    .toUri();
+		 
+	  this.restTemplate.delete(targetUrl) ;
+	  
+	  //assertEquals(HttpStatus.CREATED, resObject.getStatusCode());
+
+	 }
+}

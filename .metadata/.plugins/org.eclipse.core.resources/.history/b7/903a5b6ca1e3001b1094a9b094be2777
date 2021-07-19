@@ -1,0 +1,38 @@
+package com.intuit.craft.demo.controller;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import java.net.URI;
+import java.util.List;
+
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
+import org.springframework.boot.test.web.client.TestRestTemplate;
+import org.springframework.web.util.UriComponentsBuilder;
+
+@SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
+public class CraftDemoApplicationControllerTests {
+
+	@Autowired
+	private TestRestTemplate restTemplate;
+
+	 @Test
+	 @DisplayName("/hello rest api test ")
+	 void testMessage() {
+		 
+		 String user = "Peter";
+		 URI targetUrl= UriComponentsBuilder.fromUriString("/enduserspagination?pageNo=0&pageSize=2&upper=4")                             
+				    .queryParam("pageNo", 0)   
+				    .queryParam("pageSize", 5)
+				    .queryParam("upper", 10)
+				    .build()                                                
+				    .encode()                                               
+				    .toUri();
+		 
+	  List forObject = this.restTemplate.getForObject(targetUrl, List.class);
+	  assertEquals(5, forObject.size());
+	 }
+}

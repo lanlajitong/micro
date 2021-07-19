@@ -1,0 +1,39 @@
+version: '3.7'
+
+services:
+
+  currency-exchange:
+    image: craft/craft-feed-exchange-service:0.0.1-SNAPSHOT
+    mem_limit: 700m
+    ports:
+      - "8000:8000"
+    depends_on:
+      - naming-server
+    environment:
+      EUREKA.CLIENT.SERVICEURL.DEFAULTZONE: http://naming-server:8761/eureka
+    networks:
+      - currency-network
+  
+      
+  currency-conversion:
+    image: craft/craft-feed-conversion-service:0.0.1-SNAPSHOT
+    mem_limit: 700m
+    ports:
+      - "8100:8100"
+    depends_on:
+      - naming-server
+    environment:
+      EUREKA.CLIENT.SERVICEURL.DEFAULTZONE: http://naming-server:8761/eureka
+    networks:
+      - currency-network
+      
+  naming-server:
+    image: craft/craft-feed-naming-server:0.0.1-SNAPSHOT
+    mem_limit: 700m
+    container_name: eureka-server
+    ports:
+      - "8761:8761"
+    networks:
+      - currency-network
+networks:
+  currency-network:

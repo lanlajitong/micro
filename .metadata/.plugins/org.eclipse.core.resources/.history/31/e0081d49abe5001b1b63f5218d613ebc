@@ -1,0 +1,32 @@
+package com.intuit.craft.demo.user.exception;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class InvalidRequestException extends CommonException {
+
+	private List<FieldDetailWithFixer> fields;
+	public InvalidRequestException(String errCode, String message,  List<FieldDetailWithFixer> fields) {
+		super(errCode, message);
+		this.fields = fields;
+	}
+	
+	public void addField(FieldDetailWithFixer f) {
+		if(fields == null)
+			fields = new ArrayList<>();
+		fields.add(f);
+	}
+	
+	public void addAllFields(List<FieldDetailWithFixer> fs) {
+		if(fields == null)
+			fields = new ArrayList<>();
+		fields.addAll(fs);
+	}
+
+	public List<FieldDetailWithFixer> getFields() {
+		return fields;
+	}
+	
+	
+
+}

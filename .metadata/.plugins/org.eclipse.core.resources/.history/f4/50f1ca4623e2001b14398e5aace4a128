@@ -1,0 +1,36 @@
+package com.intuit.craft.demo.user.dto.mapper;
+
+import java.util.List;
+
+import com.intuit.craft.demo.user.dto.EnduserDTO;
+import com.intuit.craft.demo.user.entity.Enduser;
+
+
+public class EnduserMapper implements EntityMapper <EnduserDTO, Enduser> {
+
+	@Override
+	public Enduser toEntity(EnduserDTO dto) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public EnduserDTO toDto(Enduser entity) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Enduser> toEntity(List<EnduserDTO> dtoList) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<EnduserDTO> toDto(List<Enduser> entityList) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+ 
+ 
+}

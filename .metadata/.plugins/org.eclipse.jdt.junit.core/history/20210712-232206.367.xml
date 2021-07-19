@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="CraftDemoApplicationControllerTests" project="craft-demo" tests="2" started="2" failures="0" errors="0" ignored="0">
+  <testsuite name="com.intuit.craft.demo.controller.CraftDemoApplicationControllerTests" time="0.991" displayname="CraftDemoApplicationControllerTests" uniqueid="[engine:junit-jupiter]/[class:com.intuit.craft.demo.controller.CraftDemoApplicationControllerTests]">
+    <testcase name="testPostEndusers" classname="com.intuit.craft.demo.controller.CraftDemoApplicationControllerTests" time="0.953" displayname="/enduserspagination rest api test" uniqueid="[engine:junit-jupiter]/[class:com.intuit.craft.demo.controller.CraftDemoApplicationControllerTests]/[method:testPostEndusers()]"/>
+    <testcase name="testGetEnduserspagination" classname="com.intuit.craft.demo.controller.CraftDemoApplicationControllerTests" time="0.038" displayname="/enduserspagination rest api test" uniqueid="[engine:junit-jupiter]/[class:com.intuit.craft.demo.controller.CraftDemoApplicationControllerTests]/[method:testGetEnduserspagination()]"/>
+  </testsuite>
+</testrun>

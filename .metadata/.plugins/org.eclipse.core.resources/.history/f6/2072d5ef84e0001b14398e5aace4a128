@@ -1,0 +1,40 @@
+package com.intuit.craft.demo.user;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class UserController {
+
+	@Autowired
+	UserService userService;
+	
+	/*@Autowired
+	UserRepository userRepository;
+	
+	@GetMapping("/endusers")
+	public List<Enduser> retrieveAllUsers() {
+		return userRepository.findAll();
+	}
+	
+	@GetMapping("/endusers/{name}")
+	public Enduser retrieveUser(@PathVariable String name) {
+		return userRepository.findUserByNameNamedParams(name);
+	}*/
+	
+	@GetMapping("/enduserspagination")
+	public List<Enduser> retrieveAllUsersWithPagination(@RequestParam(defaultValue = "0") Integer pageNo, 
+            @RequestParam(defaultValue = "10") Integer pageSize,
+            @RequestParam(defaultValue = "id") String sortBy)  {
+		Pageable pageable = PageRequest.of(pageNo, pageSize, Sort.by(sortBy).ascending()); 
+		return userService.findAllUsersWithPaginationNative(pageable)
+	}
+	
+}

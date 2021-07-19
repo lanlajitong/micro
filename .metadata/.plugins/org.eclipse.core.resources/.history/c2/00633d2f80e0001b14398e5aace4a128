@@ -1,0 +1,29 @@
+package com.intuit.craft.demo.user;
+
+import java.util.List;
+
+import javax.websocket.server.PathParam;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class UserController {
+
+	@Autowired
+	UserRepository userRepository;
+	
+	@GetMapping("/endusers")
+	public List<Enduser> retrieveAllUsers() {
+		return userRepository.findAll();
+	}
+	
+	@GetMapping("/endusers/{name}")
+	public Enduser retrieveUser(@PathVariable String name) {
+		return userRepository.findUserByNameNamedParams(name);
+	}
+	
+	
+}
